@@ -1,0 +1,62 @@
+
+<div style="display : none">모달창0</div>
+<div style="display : none">모달창1</div>
+<div style="display : none">모달창2</div>
+
+<button>버튼0</button>
+<button>버튼1</button>
+<button>버튼2</button><br><br><br>
+
+<img id="test" src="https://codingapple1.github.io/kona.jpg"> 
+<br><br><button id="mi">Promise</button><br>
+<custom-input name="철저하게"></custom-input><br>
+<custom-input name="죽은사람"></custom-input>
+<input type="range">
+<div class="mordor"></div><label>왜 나까지 빨개짐?</label>
+<template id='te'><label>${name}을 입력하쇼</label><input>
+<style> label { color : red } </style> </template>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+document.querySelector('.mordor').attachShadow({mode:'open'})
+document.querySelector('.mordor').shadowRoot.innerHTML='<p>심연에서왔도다</p>'    
+class 클래스 extends HTMLElement { 
+   connectedCallback() { let name = this.getAttribute('name');
+this.attachShadow({mode:'open'});
+this.shadowRoot.append(te.content.cloneNode(true)) 
+ let rg=this.shadowRoot.querySelector('label');
+  rg.addEventListener('click',()=>{console.log('클릭')})
+                       }         
+static get observedAttributes(){ return ['name'] }
+   attributeChangedCallback() {
+      console.log(this.getAttribute('name'))
+   } }
+customElements.define("custom-input", 클래스);
+      
+async function 연산1(){var sel = new Promise((성공, 실패)=>{
+document.getElementById('mi').addEventListener('click', ()=>{ 
+    실패('A-yo')})})
+try{ var rst= await sel; console.log(rst)}
+  catch {  console.log('Promise 실패') } };
+연산1();연산1()
+    
+async function 연산(){  var 어려운 = new Promise((성공, 실패)=>{
+    var 결과 = 5841 / 5421;    성공(결과)});          
+try{ var rst= await 어려운; console.log(rst) }
+  catch {  console.log('Promise 연산 실패') }}                   
+    연산()
+    
+ var 프로 = new Promise((성공, 실패)=>{var 연산 = 145 / 5;
+    setTimeout(()=>{ 실패(연산)}, 1000) })    
+프로.then((ja)=>{ console.log('연산이 성공했습니다',ja)
+}).catch((ru)=>{ console.log(ru) });
+    
+var 프로3 = new Promise((성공, 실패)=>{
+    var img = document.querySelector('#test');
+img.addEventListener('load',()=>{ 성공()});
+img.addEventListener('error',()=>{ 실패()})    })
+    
+프로3.then(()=>{ console.log('success loading');
+}).catch(()=>{ console.log('error loading') })  
+
+   
+</script>
